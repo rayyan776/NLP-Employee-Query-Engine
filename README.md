@@ -9,7 +9,7 @@ This system intelligently discovers unknown database schemas, generates safe SQL
 
 ## 🚀 Highlights
 
-- 🧩 **Zero Schema Assumptions** — Works with any HR schema (`employees/staff/personnel`, `departments/divisions`, `salary/pay/compensation`).
+- 🧩 **Zero Schema Assumptions** — Works with any HR schema 
 - 🔍 **Hybrid Query Engine** — Combine SQL + document search seamlessly.
 - ⚡ **FastAPI + React** — Async backend with a responsive Bootstrap 5.3 UI (dark/light modes).
 - 🧠 **Embeddings + Caching** — Sentence-transformers + Redis with invalidation and metrics.
@@ -35,27 +35,27 @@ project/
 ├── backend/
 │ ├── api/
 │ │ └── routes/
-│ │ ├── ingestion.py # /api/ingest/database, /api/ingest/documents, /api/ingest/status
-│ │ ├── query.py # /api/query, /api/query/history
-│ │ └── schema_routes.py # /api/schema
+│ │ ├── ingestion.py 
+│ │ ├── query.py 
+│ │ └── schema_routes.py 
 │ ├── services/
-│ │ ├── schema_discovery.py # Runtime schema discovery with semantic tagging
-│ │ ├── document_processor.py # Upload, extract, chunk, embed, index
-│ │ ├── query_parser.py # Parse NL queries into structured intent
-│ │ ├── sql_builder.py # Generate SQL from parsed intent
-│ │ └── query_engine.py # Orchestrate NL→SQL/doc/hybrid, caching, metrics
+│ │ ├── schema_discovery.py 
+│ │ ├── document_processor.py 
+│ │ ├── query_parser.py 
+│ │ ├── sql_builder.py 
+│ │ └── query_engine.py 
 │ ├── models/
-│ │ └── db.py # SQLAlchemy engine with connection pooling
+│ │ └── db.py 
 │ ├── tests/
 │ │ ├── init.py
-│ │ ├── test_query_parser.py # Unit tests for query parsing logic
-│ │ └── test_integration.py # Integration tests for end-to-end SQL generation
-│ ├── main.py # FastAPI app setup, CORS, routers, /health
-│ └── .env # Configuration variables
+│ │ ├── test_query_parser.py 
+│ │ └── test_integration.py
+│ ├── main.py 
+│ └── .env 
 │
 ├── frontend/
 │ ├── public/
-│ │ └── index.html # Bootstrap 5.3 UI
+│ │ └── index.html 
 │ └── src/
 │ ├── components/
 │ │ ├── DatabaseConnector.js
@@ -69,7 +69,7 @@ project/
 │ └── index.js
 │
 ├── tools/
-│ └── bench_p95.py # Load/latency benchmark (10 users)
+│ └── bench_p95.py 
 │
 ├── requirements.txt
 ├── package.json
@@ -93,7 +93,6 @@ project/
 
 ### 1️⃣ Clone and Create Environments
 
-
 git clone https://github.com/<your-username>/NLP-Query-Engine.git
 cd NLP-Query-Engine
 
@@ -110,9 +109,8 @@ cd frontend
 npm install
 cd ..
 
-
 ### 2️⃣ Configure Environment
-
+```
 Create a `.env` file in `backend/`:
 DATABASE_URL=postgresql://user:pass@localhost:5432/employees_db
 REDIS_HOST=localhost
@@ -123,7 +121,7 @@ EMBEDDINGS_MODEL=sentence-transformers/all-MiniLM-L6-v2
 BATCH_SIZE=32
 POOL_SIZE=10
 DOC_MAX_MB=10
-
+```
 ### 3️⃣ (Optional) Seed Sample Database
 
 Use provided SQL (tables: `employees`, `departments`, `documents`) to populate `employees_db`.
