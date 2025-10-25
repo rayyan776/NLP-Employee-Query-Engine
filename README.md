@@ -258,15 +258,6 @@ tests/test_query_parser.py::test_detect_reports_to PASSED
 
 7 passed in 0.XX s
 
----
-
-## ⚠️ Known Limitations
-
-- Very complex multi-table analytics may need manual model tuning.
-- Document highlight granularity: snippet-level only.
-- MySQL/SQLite may require window/date syntax adjustments.
-
----
 
 ## ⚙️ Configuration
 
@@ -280,6 +271,3 @@ Optional **Docker Compose** setup can be added for API, DB, and Redis orchestrat
 For **evaluation and demonstration** purposes only.
 All third-party libraries retain their original licenses.
 
-```
-
-```
