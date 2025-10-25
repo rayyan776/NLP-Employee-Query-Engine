@@ -350,6 +350,13 @@ tests/test_query_parser.py::test_detect_reports_to PASSED
 7 passed in 0.XX s
 
 
+## 🎥 Demo Video (5–7 min)
+
+Watch the end‑to‑end walkthrough of schema discovery, NL→SQL, hybrid document search, caching, metrics, and UI features:
+
+👉 https://www.loom.com/share/6ca61182372f44159b44855ef42d6a2d
+
+
 ## ⚙️ Configuration
 
 All environment variables live in `backend/.env`.
