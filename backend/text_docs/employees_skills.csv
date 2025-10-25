@@ -1,0 +1,6 @@
+emp_id,full_name,department,skills
+1,Arjun Sharma,Engineering,"Python,Django,React,PostgreSQL,Docker"
+11,Ritika Sen,Engineering,"React,JavaScript,CSS,TypeScript,Jest"
+24,Anjali Gupta,Engineering,"Python,React,AWS,Microservices,Redis"
+,Neeraj Kulkarni,Data,"Python,Airflow,Spark,dbt"
+,Namrata Jain,Finance,"SQL,PowerBI,Excel,Budgeting"

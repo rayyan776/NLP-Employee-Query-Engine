@@ -1,0 +1,10 @@
+Project: Data Platform Enhancements
+Goal: Improve reliability, lineage, and cost-efficiency
+Scope:
+- Airflow DAG retry/backoff strategy
+- dbt incremental models with tests
+- Observability: metrics, logs, traces
+Non-Functional:
+- P95 < 2s for key queries
+- Backfill tooling with progress tracking
+Tech: Python, Airflow, dbt, Postgres/Snowflake, OpenTelemetry

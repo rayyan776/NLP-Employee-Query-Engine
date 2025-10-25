@@ -1,0 +1,12 @@
+EmpID: 24
+DocType: Resume
+Name: Anjali Gupta
+Title: Software Architect
+Department: Engineering
+Office: Bangalore
+Skills: Python, React, Cloud (AWS), Microservices, System Design, Redis
+Experience:
+- Led migration to microservices; designed event-driven architecture
+- Mentored engineers; led performance reviews and design reviews
+Education: M.Tech Computer Science
+Summary: Architect focusing on scalable services, observability, and developer productivity

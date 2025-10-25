@@ -1,0 +1,11 @@
+EmpID: N/A
+DocType: Resume
+Name: Rahul Varma
+Title: Data Engineer
+Location: Pune
+Skills: Python, Airflow, Spark, dbt, Snowflake, SQL
+Experience:
+- Built incremental ELT with dbt and Snowflake
+- Scheduled DAGs in Airflow; lineage and SLAs
+Education: B.Tech Electronics
+Summary: Data pipelines, modeling, and cost-aware analytics

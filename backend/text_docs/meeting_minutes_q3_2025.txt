@@ -1,0 +1,11 @@
+Meeting: Q3 Ops & Data Sync
+Date: 2025-09-10
+Attendees: Eng, Data, Finance, HR
+Topics:
+- SLA adherence for nightly pipelines
+- Hiring plan for Q4 (frontend and data engineering)
+Decisions:
+- Move heavy loads to off-peak window
+- Pilot column-level lineage in staging
+Actions:
+- Draft runbooks and on-call rotation updates

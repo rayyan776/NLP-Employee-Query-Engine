@@ -1,0 +1,12 @@
+EmpID: 1
+DocType: PerformanceReview
+Period: 2024
+Reviewer: Engineering Manager
+Ratings: Technical 4/5, Collaboration 4/5, Delivery 5/5
+Highlights:
+- Delivered billing API with <150ms P95 latency
+- Reduced DB cost by 20% via index and query tuning
+Growth Areas:
+- Increase design documentation depth
+- Cross-train on infra-as-code
+Overall: Exceeds expectations

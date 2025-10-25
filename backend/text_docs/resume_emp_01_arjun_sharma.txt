@@ -1,0 +1,12 @@
+EmpID: 1
+DocType: Resume
+Name: Arjun Sharma
+Title: Software Engineer
+Department: Engineering
+Office: Mumbai
+Skills: Python, Django, React, PostgreSQL, Docker
+Experience:
+- 2021-06 to Present: Backend services in Python/Django; REST APIs; React-based internal tools
+- Built CI/CD pipelines and optimized Postgres queries
+Education: B.Tech in Computer Science
+Summary: Full-stack engineer focusing on Python services and React UI with strong SQL foundations

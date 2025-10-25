@@ -1,0 +1,12 @@
+EmpID: 11
+DocType: Resume
+Name: Ritika Sen
+Title: Frontend Developer
+Department: Engineering
+Office: Bangalore
+Skills: React, JavaScript, CSS, TypeScript, Vite, Jest
+Experience:
+- Built component library with React and Storybook
+- Optimized bundle size and Web Vitals (LCP/FID/CLS)
+Education: B.E. Information Technology
+Summary: Frontend specialist with modern React patterns and testing best practices
