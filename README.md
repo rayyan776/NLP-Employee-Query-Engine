@@ -28,7 +28,7 @@ This system intelligently discovers unknown database schemas, generates safe SQL
 | **Packaging**  | pip / venv (Docker optional)                                   |
 
 ---
-
+```
 ## 📁 Project Structure
 
 project/
@@ -74,7 +74,7 @@ project/
 ├── requirements.txt
 ├── package.json
 └── README.md
-
+```
 ---
 
 ## ⚙️ Prerequisites
