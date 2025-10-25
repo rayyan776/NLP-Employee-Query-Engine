@@ -25,7 +25,6 @@ This system intelligently discovers unknown database schemas, generates safe SQL
 | **Database**   | PostgreSQL (MySQL/SQLite supported for demo)                   |
 | **Embeddings** | `sentence-transformers/all-MiniLM-L6-v2`, FAISS-like CPU index |
 | **Frontend**   | React + Bootstrap 5.3 (with `data-bs-theme` toggle)            |
-| **Packaging**  | pip / venv (Docker optional)                                   |
 
 ---
 ```
@@ -37,7 +36,9 @@ project/
 │ │ └── routes/
 │ │ ├── ingestion.py 
 │ │ ├── query.py 
-│ │ └── schema_routes.py 
+│ │ └── schema_routes.py
+| ├── db_scripts
+| | ├──init_db.sql
 │ ├── services/
 │ │ ├── schema_discovery.py 
 │ │ ├── document_processor.py 
@@ -93,10 +94,11 @@ project/
 
 ### 1️⃣ Clone and Create Environments
 
-git clone https://github.com/<your-username>/NLP-Query-Engine.git
-cd NLP-Query-Engine
+git clone https://github.com/rayyan776/NLP-Employee-Query-Engine.git
+cd ai-nlp-query-engine
 
 # Backend environment
+cd backend
 python -m venv venv
 source venv/bin/activate    # (Linux/macOS)
 # or
@@ -107,7 +109,7 @@ pip install -r requirements.txt
 # Frontend setup
 cd frontend
 npm install
-cd ..
+npm start
 
 ### 2️⃣ Configure Environment
 ```
@@ -122,9 +124,98 @@ BATCH_SIZE=32
 POOL_SIZE=10
 DOC_MAX_MB=10
 ```
-### 3️⃣ (Optional) Seed Sample Database
 
-Use provided SQL (tables: `employees`, `departments`, `documents`) to populate `employees_db`.
+
+## 🗄️ Database Setup
+
+### Step 1: Install PostgreSQL
+
+**Windows:**
+- Download from: https://www.postgresql.org/download/windows/
+- Run installer and remember your superuser password
+
+**macOS:**
+```
+brew install postgresql@15
+brew services start postgresql@15
+```
+
+**Linux:**
+```
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+sudo systemctl start postgresql
+```
+
+### Step 2: Create Database and User
+
+Open PostgreSQL shell:
+
+```
+# Windows: Open 'SQL Shell (psql)' from Start Menu
+# Mac/Linux: Run this in terminal
+psql -U postgres
+```
+
+In the PostgreSQL prompt, run:
+
+```
+-- Create user
+CREATE USER your_username WITH PASSWORD 'your_password';
+
+-- Create database
+CREATE DATABASE employees_db;
+
+-- Grant privileges
+GRANT ALL PRIVILEGES ON DATABASE employees_db TO your_username;
+
+-- Connect to the database
+\c employees_db
+
+-- Grant schema privileges
+GRANT ALL ON SCHEMA public TO your_username;
+
+-- Exit
+\q
+```
+
+### Step 3: Run Schema and Seed Data
+
+```
+# Navigate to backend folder
+cd backend
+
+# Run the SQL file
+psql -U your_username -d employees_db -f db_scripts/init_db.sql
+```
+
+**Or manually:**
+1. Open `backend/db_scripts/init_db.sql`
+2. Copy all contents
+3. Open pgAdmin or DBeaver
+4. Connect to `employees_db`
+5. Paste and execute
+
+### Step 4: Configure Connection String
+
+Update `backend/.env`:
+
+```
+DATABASE_URL=postgresql://your_username:your_password@localhost:5432/employees_db
+```
+
+**Example:**
+```
+DATABASE_URL=postgresql://john:secret123@localhost:5432/employees_db
+```
+
+### Step 5: Test Connection
+
+```
+cd backend
+python -c "from models.db import engine; print(engine().connect()); print('✅ Connected!')"
+```
+
 
 ---
 
