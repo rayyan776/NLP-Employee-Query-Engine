@@ -1,4 +1,4 @@
-```markdown
+
 # 🧠 NLP Query Engine for Employee Data
 
 A **production-ready, schema-adaptive Natural Language Query Engine** for structured employee databases and unstructured HR documents.
@@ -87,13 +87,13 @@ project/
 > 🪟 On Windows, ensure PostgreSQL and Redis services are running and added to PATH.
 
 ---
-```
+
 
 ## 🧩 Setup
 
 ### 1️⃣ Clone and Create Environments
 
-```bash
+
 git clone https://github.com/<your-username>/NLP-Query-Engine.git
 cd NLP-Query-Engine
 
@@ -109,13 +109,11 @@ pip install -r requirements.txt
 cd frontend
 npm install
 cd ..
-```
+
 
 ### 2️⃣ Configure Environment
 
 Create a `.env` file in `backend/`:
-
-```ini
 DATABASE_URL=postgresql://user:pass@localhost:5432/employees_db
 REDIS_HOST=localhost
 REDIS_PORT=6379
@@ -125,7 +123,6 @@ EMBEDDINGS_MODEL=sentence-transformers/all-MiniLM-L6-v2
 BATCH_SIZE=32
 POOL_SIZE=10
 DOC_MAX_MB=10
-```
 
 ### 3️⃣ (Optional) Seed Sample Database
 
@@ -137,25 +134,21 @@ Use provided SQL (tables: `employees`, `departments`, `documents`) to populate `
 
 ### Start Redis
 
-```bash
 redis-server
 # Check with:
 redis-cli ping  # → PONG
-```
+
 
 ### Start Backend
 
-```bash
 cd backend
 uvicorn main:app --reload --port 8000
-```
+
 
 ### Start Frontend
 
-```bash
 cd frontend
 npm start
-```
 
 Your app will open at **[http://localhost:3000](http://localhost:3000)** (proxying to FastAPI on 8000).
 
@@ -165,13 +158,13 @@ Your app will open at **[http://localhost:3000](http://localhost:3000)** (proxyi
 
 | Method | Endpoint                | Description                             |
 | :----- | :---------------------- | :-------------------------------------- |
-| `POST` | `/api/ingest/database`  | Discover schema from DB connection      |
-| `POST` | `/api/ingest/documents` | Upload multiple docs (PDF/DOCX/TXT/CSV) |
-| `GET`  | `/api/ingest/status`    | Check ingestion job progress            |
-| `POST` | `/api/query`            | Run NL→SQL/Doc/Hybrid query             |
-| `GET`  | `/api/query/history`    | Fetch past queries and metrics          |
-| `GET`  | `/api/schema`           | Return last discovered schema           |
-| `GET`  | `/health`               | Service health check                    |
+| POST | `/api/ingest/database`  | Discover schema from DB connection      |
+| POST | `/api/ingest/documents` | Upload multiple docs (PDF/DOCX/TXT/CSV) |
+| GET  | `/api/ingest/status`    | Check ingestion job progress            |
+| POST | `/api/query`            | Run NL→SQL/Doc/Hybrid query             |
+| GET  | `/api/query/history`    | Fetch past queries and metrics          |
+| GET  | `/api/schema`           | Return last discovered schema           |
+| GET  | `/health`               | Service health check                    |
 
 ---
 
